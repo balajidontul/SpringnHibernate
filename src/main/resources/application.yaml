@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://sql.freedb.tech/freedb_CtnxV0gD
+    username: u_tXMSBI
+    password: On78S8up32R9
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
