@@ -1,8 +1,13 @@
+
+
 spring:
+  config:
+    import: "aws-secretsmanager:dev/db/cred"
+
   datasource:
-    url: jdbc:mysql://sql.freedb.tech/freedb_CtnxV0gD
-    username: u_tXMSBI
-    password: On78S8up32R9
+    url: ${mysql.url}
+    username: ${mysql.username}
+    password: ${mysql.password}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
@@ -12,3 +17,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+
+  cloud:
+    aws:
+      region:
+        static: us-east-1
+      secretsmanager:
+        enabled: true
+        secret-name: dev/db/cred
+
+
